@@ -23,7 +23,7 @@ Computer vision tasks include methods for acquiring, processing, analyzing and u
      7:- PREDICTION
 
 # Overview
-This Project is an applicaton based on Computer vision and Machne learning implementation using regression supervised classification.
+This Project is an applicaton based on Computer vision and Machine learning implementation using regression supervised classification.
 
 # Requirements
      1:- SCIKIT-LEARN
