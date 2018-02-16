@@ -23,3 +23,16 @@ Computer vision tasks include methods for acquiring, processing, analyzing and u
      4:- DATASET SANPSHOT
      5:- DATA PLOTTING and GRAPHS
      7:- PREDICTION
+
+# Requirements
+
+     1:- SCIKIT-LEARN
+     2:- PICKLE
+     3:- MATPLOTLIB
+     4:- NUMPY
+     5:- PANDAS
+     6:- OS/SYS
+     7:- CV2
+     
+     
+     
