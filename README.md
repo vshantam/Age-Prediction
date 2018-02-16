@@ -1,7 +1,6 @@
-# Age-Prediction
-This Project is an applicaton based on Computer vision and Machne learning implementation using regression supervised classification. 
+                                              Age-Prediction 
 
-# MachIne Learning
+# Machine Learning
 
 Machine learning is a field of computer science that gives computers the ability to learn without being explicitly programmed. The name Machine learning was coined in 1959 by Arthur Samuel
 
@@ -14,6 +13,9 @@ In statistical modeling, regression analysis is a set of statistical processes f
 # Computer Vision
 
 Computer vision tasks include methods for acquiring, processing, analyzing and understanding digital images, and extraction of high-dimensional data from the real world in order to produce numerical or symbolic information, e.g., in the forms of decisions.
+
+# Overview
+This Project is an applicaton based on Computer vision and Machne learning implementation using regression supervised classification.
 
 # Project Structure
 
@@ -34,5 +36,17 @@ Computer vision tasks include methods for acquiring, processing, analyzing and u
      6:- OS/SYS
      7:- CV2
      
-     
+# Installation
+
+Suggested to use Python3 pip version i.e pip3 to install packages.
+
+if you do not have pip3 installed in your system .
+
+Use this command:
+
+     sudo apt-get install python3-pip --upgrade # for pip3
+     sudo apt-get install python-pip --upgrade #for pip 
+eg:-
+
+     pip3 install scikit-learn #for sklearn 
      
