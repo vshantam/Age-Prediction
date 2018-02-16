@@ -1,7 +1,7 @@
 # Age-Prediction
 This Project is an applicaton based on Computer vision and Machne learning implementation using regression supervised classification. 
 
-# Machne Learning
+# MachIne Learning
 
 Machine learning is a field of computer science that gives computers the ability to learn without being explicitly programmed. The name Machine learning was coined in 1959 by Arthur Samuel
 
@@ -17,9 +17,9 @@ Computer vision tasks include methods for acquiring, processing, analyzing and u
 
 # Project Structure
 
-  1:- OVERVIEW
-  2:- REQUIREMENTS
-  3:- INSTALLATION
-  4:- DATASET SANPSHOT
-  5:- DATA PLOTTING and GRAPHS
-  7:- PREDICTION
+     1:- OVERVIEW
+     2:- REQUIREMENTS
+     3:- INSTALLATION
+     4:- DATASET SANPSHOT
+     5:- DATA PLOTTING and GRAPHS
+     7:- PREDICTION
