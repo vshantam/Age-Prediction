@@ -1,4 +1,7 @@
                                               Age-Prediction 
+This project is based on the dataset provided by wik/Dataset
+
+link:-"https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/"
 
 # Machine Learning
 Machine learning is a field of computer science that gives computers the ability to learn without being explicitly programmed. The name Machine learning was coined in 1959 by Arthur Samuel
@@ -49,3 +52,52 @@ Features set
 ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/Screenshot%20(20).png)
 Output set                   
 ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/Screenshot%20(21).png)
+
+# Data Plotting and Graphs
+Histogram plotting                                                                                                     
+![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/Figure_3.png)
+
+Plot variation                                                                                                        
+![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/Figure_2.png)
+
+Pie chart Analysis                                                                                                           
+![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/Figure_1.png)
+
+Combination of simple plot and Histogram                                                                                        
+![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/Figure_4.png)
+
+# Predictions
+This is a real time application using webcam feed so the accuracy will not be much reliable but close to the actual values.One can expect variatons also.
+
+The reason could be anythng Like :
+                            
+    Quality of the images
+    Noise in the Image
+    Fps Distribution
+    
+The application Predicts only when the Face is been detected by the camera in Real Time.If it fails to predict the face then it Halts until it finds one.
+
+scripts :-
+
+      $ python3  Dataset.py
+The wiki datset folder structure looks like                     
+![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/Capture.PNG)
+
+where each folder contains images of peaple which age labled on the image
+this function hels to loop through all the folder images and scales them,after that the script puts the all images into the sample images folder                               
+
+![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/Capture1.PNG)
+
+
+    $ python3 cropfunc.py
+This function helps to loop through all the resized image and detect the faces in it . if the face is been detected then it crops the facial par and saves it in the sample cropped folder.
+
+![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/Capture2.PNG)
+
+After the crop procedure script provide function to convert the color images into grayscale image.
+![alt-tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/Capture3.PNG)
+
+    $ python3 clf.py
+ This functon is used for loading the dataset and classifier using machine learning modules
+
+    $ main.py
