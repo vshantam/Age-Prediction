@@ -16,10 +16,11 @@ Computer vision tasks include methods for acquiring, processing, analyzing and u
 
 # Project Structure
      1:- OVERVIEW
-     2:- REQUIREMENTS
-     3:- INSTALLATION
-     4:- DATASET SANPSHOT
-     5:- DATA PLOTTING and GRAPHS
+     2:- WORKING
+     3:- REQUIREMENTS
+     4:- INSTALLATION
+     5:- DATASET SANPSHOT
+     6:- DATA PLOTTING and GRAPHS
      7:- PREDICTION
 
 # Overview
