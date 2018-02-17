@@ -102,6 +102,17 @@ After the crop procedure script provide function to convert the color images int
 ![alt-tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/Capture3.PNG)
 
     $ python3 clf.py
- This functon is used for loading the dataset and classifier using machine learning modules
+ This functon is used for loading the dataset and classifier using machine learning modules.
+ 
+ The classifier can be saved using pickle module if you are usng scikit learn and the formats are:
+ 
+    1:- sav
+    2:- pkl
+    
+ if you are using Deep Learning Modules such as keras,Tensorflow you can use the Following formats:
 
-    $ main.py
+    1:- hdf5
+    2:- h5py
+    3:- YAML
+    4:- JSON
+
