@@ -1,5 +1,5 @@
                                               Age-Prediction 
-This project is based on the dataset provided by wik/Dataset
+This project is based on the dataset provided by wiki/Dataset
 
 link:-"https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/"
 
