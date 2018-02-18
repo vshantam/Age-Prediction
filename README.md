@@ -125,4 +125,4 @@ Does the Actual Prediction
       $ main.py
     
 Output 1:
-![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/ice_video_20180218-215213.gif)
+![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/output1.gif)
