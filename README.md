@@ -125,4 +125,7 @@ Does the Actual Prediction
       $ main.py
     
 Output 1:
+
+    Predicted Age :- 24
+    Actual Age :- 21
 ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/output1.gif)
