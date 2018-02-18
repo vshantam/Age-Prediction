@@ -22,8 +22,8 @@ Computer vision tasks include methods for acquiring, processing, analyzing and u
      5:- DATASET SANPSHOT
      6:- DATA PLOTTING and GRAPHS
      7:- PREDICTION
-     8:- OUTPUT
-     9:- GENDER ANALYSIS AND LEARNING CURVE
+     8:- GENDER ANALYSIS AND LEARNING CURVE
+     9:- OUTPUT
 
 # Overview
 This Project is an applicaton based on Computer vision and Machine learning implementation using regression supervised classification.
@@ -118,6 +118,42 @@ After the crop procedure script provide function to convert the color images int
     3:- YAML
     4:- JSON
 
+ 
+ # Gender Analysis  and Learning Curve
+ 
+                                        Training Set                      
+ 
+ 
+ Simple Plot                                                            
+ ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot1.png)
+ 
+ 
+   
+ Scatter Plot                                                                                    
+ ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot2.png)
+ 
+ 
+ 
+ Pie Chart                                                   
+ ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot3.png)
+ 
+                                         Testing set
+                                         
+ 
+ Simple Plot                                              
+ ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot4.png)
+ 
+ 
+ 
+ Scatter Plot                                            
+ ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot5.png)
+ 
+  
+  
+ Pie Chart                              
+ ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot6.png)
+
+
 
 # Output
 
@@ -137,28 +173,3 @@ Output 2:
 Output 3:
 ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/output3.gif)
  
- 
- # Gender Analysis  and Learning Curve
- 
-                                        Training Set                      
- 
- Simple Plot             
- ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot1.png)
- 
- Scatter Plot                                        
- ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot2.png)
- 
- Pie Chart
- ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot3.png)
- 
-                                         Testing set
- 
- Simple Plot
- ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot4.png)
- 
- Scatter Plot
- ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot5.png)
- 
- Pie Chart
- ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot6.png)
-
