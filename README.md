@@ -22,6 +22,7 @@ Computer vision tasks include methods for acquiring, processing, analyzing and u
      5:- DATASET SANPSHOT
      6:- DATA PLOTTING and GRAPHS
      7:- PREDICTION
+     8:- OUTPUT
 
 # Overview
 This Project is an applicaton based on Computer vision and Machine learning implementation using regression supervised classification.
@@ -116,3 +117,12 @@ After the crop procedure script provide function to convert the color images int
     3:- YAML
     4:- JSON
 
+
+# Output
+
+Does the Actual Prediction
+
+      $ main.py
+    
+Output 1:
+![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/ice_video_20180218-215213.gif)
