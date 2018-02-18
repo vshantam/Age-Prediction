@@ -122,8 +122,8 @@ After the crop procedure script provide function to convert the color images int
  # Gender Analysis  and Learning Curve
  
                                         Training Set         
-                                                                                                        X-axis : Accuracy
-                                                                                                        Y-axis : Loss
+                                                                                         X-axis : Accuracy
+                                                                                         Y-axis : Loss
  
  
  Simple Plot                                                            
@@ -140,8 +140,8 @@ After the crop procedure script provide function to convert the color images int
  ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot3.png)
  
                                          Testing set
-                                                                                                              X-axis : Accuracy
-                                                                                                              Y-axis : Loss
+                                                                                              X-axis : Accuracy
+                                                                                              Y-axis : Loss
                                          
  
  Simple Plot                                              
