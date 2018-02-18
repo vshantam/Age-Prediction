@@ -13,6 +13,9 @@ import numpy as np
 import cv2
 import os
 import pickle
+import math
+import keras.models
+
 
 '''The OPenCv performs same operation to feed whether it is an image or Vedio.The way vedio works is with THe frames per sec (FPS) and each frame is still an image so it is basically the same thing or we can say that Looping the continuos capturing of image leads to the formation of images.'''
 
@@ -32,8 +35,14 @@ cap=cv2.VideoCapture(0) #For Primary webcam
 #To save each frames 
 #fourcc=cv2.VedioWriter("Output_name.avi",fourcc,20.0,(720,640))#(720,640)==720x640 pixel values.It depends on the Webcam quality.
 
+clf1 = keras.models.load_model("C://Users/Shantam Vijayputra/Desktop/gclf.h5py")
+
+clf = pickle.load(open("c://Users/Shantam Vijayputra/Desktop/clf.pkl","rb"))
+
+
 #Loading the cascade classifier files
 face_cascade=cv2.CascadeClassifier('C://Users/Haarcascades_Datasets/haarcascade_frontalface_default.xml ')#copy the locations
+
 eye_cascade=cv2.CascadeClassifier('C://Users/Haarcascades_Datasets/haarcascade_eye.xml ')#copy the locations
 
 #looping through the webcam feed
@@ -41,14 +50,28 @@ while 1:
         
         #reading the frame
         ret, img = cap.read()
+
+        im = cv2.resize(img,(64,64))
+
+        bailey = np.expand_dims(im, axis=0)
         
+        prediction_b = clf1.predict(bailey)
+
+        if math.floor(prediction_b) >=0.15:
+
+                prediction_b = "Female"
+                
+        else:
+                prediction_b = "Male"
+        
+
         #conversion of grayscale
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        
+        gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+
         #detection of facial coordinates
         faces = face_cascade.detectMultiScale(gray, 1.3, 5)
         
-        #creating rectangles
+       #creating rectangles
         for (x,y,w,h) in faces:
                 
                 #in face
@@ -56,6 +79,7 @@ while 1:
                 
                 #extracting the facial part
                 roi_gray = gray[y:y+h, x:x+w]
+                
                 roi_color = img[y:y+h, x:x+w]
                 
                 #reshaping for prediction
@@ -66,16 +90,13 @@ while 1:
                 
                 #transpose
                 simg = simg.T/10.0
-                
-                #loading the classifier
-                clf = pickle.load(open("c://Users/Shantam Vijayputra/Desktop/clf.pkl","rb"))
-                
+                                
                 #predicting the value
                 res = clf.predict(simg)
                 
                 #reduction for noise
                 if res//2 >15:
-                        print("Predicted Age is :{}".format(abs(res)//2))
+                        print("Gender :{}\tPredicted Age is :{}".format((prediction_b),abs(res)//2))
                         
                 #detection of eyes
                 eyes = eye_cascade.detectMultiScale(roi_gray)
