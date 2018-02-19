@@ -170,7 +170,7 @@ we have a marker or object with a known width W. We then place this marker some 
 
                 D = (W x F) / P
                 
-Here Dis the Actual Distance alculated by the system.
+Here "D" is the Actual Distance alculated by the system and "F" is the Focal length calculated by the system.
 
 For references use the link : ("https://stackoverflow.com/questions/14038002/opencv-how-to-calculate-distance-between-camera-and-object-using-image")
 
