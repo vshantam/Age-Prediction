@@ -26,7 +26,7 @@ Computer vision tasks include methods for acquiring, processing, analyzing and u
      9:- OUTPUT
 
 # Overview
-This Project is an applicaton based on Computer vision and Machine learning implementation using regression supervised classification.
+This Project is an application based on Computer vision and Machine learning implementation using regression supervised classification.
 # Working
 ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/working.png)
 
