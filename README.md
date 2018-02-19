@@ -23,7 +23,8 @@ Computer vision tasks include methods for acquiring, processing, analyzing and u
      6:- DATA PLOTTING and GRAPHS
      7:- PREDICTION
      8:- GENDER ANALYSIS AND LEARNING CURVE
-     9:- OUTPUT
+     9:- OBJECT DISTANCE CALCULATION
+     10:- OUTPUT
 
 # Overview
 This Project is an application based on Computer vision and Machine learning implementation using regression supervised classification.
@@ -157,7 +158,21 @@ After the crop procedure script provide function to convert the color images int
  Pie Chart                              
  ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Gender/gplot6.png)
 
+# Object Distance Calculation
 
+In order to determine the distance from our camera to a known object or marker, we are going to utilize triangle similarity.
+
+we have a marker or object with a known width W. We then place this marker some distance D from our camera. We take a picture of our object using our camera and then measure the apparent width in pixels P. This allows us to derive the perceived focal length F of our camera:
+
+                F = (P x  D) / W
+                
+ I can apply the triangle similarity to determine the distance of the object to the camera:
+
+                D = (W x F) / P
+                
+Here Dis the Actual Distance alculated by the system.
+
+For references use the link : ("https://stackoverflow.com/questions/14038002/opencv-how-to-calculate-distance-between-camera-and-object-using-image")
 
 # Output
 
@@ -169,7 +184,7 @@ Output 1:
 
     Predicted Age :- 24
     Actual Age :- 21
-![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/output1.gif)
+![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/output4.gif)
 
 Output 2:
 ![alt_tag](https://github.com/vshantam/Age-Prediction/blob/master/Analysis/output2.gif)
