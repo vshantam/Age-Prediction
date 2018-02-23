@@ -53,7 +53,7 @@ KNOWN_DISTANCE = 14
 KNOWN_WIDTH = 5
 
 # initialize the list of images that we'll be using
-IMAGE_PATHS = []
+#IMAGE_PATHS = []
 
 # load the furst image that contains an object that is KNOWN TO BE 2 feet
 # from our camera, then find the paper marker in the image, and initialize
