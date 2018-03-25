@@ -82,7 +82,7 @@ The reason could be anythng Like :
     Noise in the Image
     Fps Distribution
     
-The application Predicts only when the Face is been detected by the camera in Real Time.If it fails to predict the face then it Halts until it finds one.
+The application Predicts only when the Face is been detected by the camera in Real Time.If it fails to predict the face then it Halts until it finds one..
 
 scripts :-
 
