@@ -33,9 +33,9 @@ def find_marker(image):
 
 	# find the contours in the edged image and keep the largest one;
 	# we'll assume that this is our piece of paper in the image
-	_, cnts, _= cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+	contours,hierachy=cv2.findContours(edged.copy(),cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 
-	c = max(cnts, key = cv2.contourArea)
+	c = max(contours, key = cv2.contourArea)
 
 	# compute the bounding box of the of the paper region and return it
 	return cv2.minAreaRect(c)
@@ -58,7 +58,7 @@ KNOWN_WIDTH = 5
 # load the furst image that contains an object that is KNOWN TO BE 2 feet
 # from our camera, then find the paper marker in the image, and initialize
 # the focal length
-image = cv2.imread("C://Users/Shantam Vijayputra/Desktop/trainpic.jpg")
+image = cv2.imread("training_pic/trainpic.jpg")
 marker = find_marker(image)
 focalLength = (marker[1][0] * KNOWN_DISTANCE) / KNOWN_WIDTH
 
@@ -73,21 +73,22 @@ cap=cv2.VideoCapture(0) #For Primary webcam
 #To save each frames 
 #fourcc=cv2.VedioWriter("Output_name.avi",fourcc,20.0,(720,640))#(720,640)==720x640 pixel values.It depends on the Webcam quality.
 
-clf1 = keras.models.load_model("C://Users/Shantam Vijayputra/Desktop/gclf.h5py")
+clf1 = keras.models.load_model("Model/gclf.h5py")
 
-clf = pickle.load(open("c://Users/Shantam Vijayputra/Desktop/clf.pkl","rb"))
+clf = pickle.load(open("Model/clf.pkl","rb"))
 
 
 #Loading the cascade classifier files
-face_cascade=cv2.CascadeClassifier('C://Users/Haarcascades_Datasets/haarcascade_frontalface_default.xml ')#copy the locations
+face_cascade=cv2.CascadeClassifier('./Haarcascades_Datasets/haarcascade_frontalface_default.xml ')#copy the locations
 
-eye_cascade=cv2.CascadeClassifier('C://Users/Haarcascades_Datasets/haarcascade_eye.xml ')#copy the locations
+eye_cascade=cv2.CascadeClassifier('./Haarcascades_Datasets/haarcascade_eye.xml ')#copy the locations
 
 #looping through the webcam feed
 while 1:
         
         #reading the frame
         ret, img = cap.read()
+
 
         im = cv2.resize(img,(64,64))
 
