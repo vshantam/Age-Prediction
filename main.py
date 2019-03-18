@@ -15,9 +15,9 @@ import os
 import pickle
 import math
 import keras.models
+import imutils
 
-
-'''The OPenCv performs same operation to feed whether it is an image or Vedio.The way vedio works is with THe frames per sec (FPS) and each frame is still an image so it is basically the same thing or we can say that Looping the continuos capturing of image leads to the formation of images.'''
+#The OPenCv performs same operation to feed whether it is an image or Vedio.The way vedio works is with THe frames per sec (FPS) and each frame is #still an image so it is basically the same thing or we can say that Looping the continuos capturing of image leads to the formation of images.'''
 
 #For primary   Webcam Feed :- 0
 #For secondary Webcam Feed :- 1
@@ -79,87 +79,87 @@ clf = pickle.load(open("Model/clf.pkl","rb"))
 
 
 #Loading the cascade classifier files
-face_cascade=cv2.CascadeClassifier('./Haarcascades_Datasets/haarcascade_frontalface_default.xml ')#copy the locations
+face_cascade=cv2.CascadeClassifier('Haarcascades_Datasets/haarcascade_frontalface_default.xml')#copy the locations
 
-eye_cascade=cv2.CascadeClassifier('./Haarcascades_Datasets/haarcascade_eye.xml ')#copy the locations
+eye_cascade=cv2.CascadeClassifier('Haarcascades_Datasets/haarcascade_eye.xml')#copy the locations
 
 #looping through the webcam feed
-while 1:
+if cap.isOpened():
+	while 1:
         
-        #reading the frame
-        ret, img = cap.read()
-
-
-        im = cv2.resize(img,(64,64))
-
-        bailey = np.expand_dims(im, axis=0)
-        
-        prediction_b = clf1.predict(bailey)
-
-        if math.floor(prediction_b) >=0.15:
-
-                prediction_b = "Female"
-                
-        else:
-                prediction_b = "Male"
-        
-
-        #conversion of grayscale
-        gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-
-        #detection of facial coordinates
-        faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-        
-       #creating rectangles
-        for (x,y,w,h) in faces:
+        	#reading the frame
+        	ret, img=cap.read()
+	
+        	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+	
+	
+        	im = cv2.resize(img,(64,64))
+	
+        	bailey = np.expand_dims(im, axis=0)
+        	
+        	prediction_b = clf1.predict(bailey)
+	
+        	if math.floor(prediction_b) >=0.15:
+	
+        	        prediction_b = "Female"
+        	        
+        	else:
+        	        prediction_b = "Male"
+        	
+	
+        	#detection of facial coordinates
+        	faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+        	
+       		#creating rectangles
+        	for (x,y,w,h) in faces:
                 
                 #in face
-                cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
+                	cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
                 
                 #extracting the facial part
-                roi_gray = gray[y:y+h, x:x+w]
+                	roi_gray = gray[y:y+h, x:x+w]
                 
-                roi_color = img[y:y+h, x:x+w]
+                	roi_color = img[y:y+h, x:x+w]
                 
                 #reshaping for prediction
-                simg = cv2.resize(roi_gray,(10,10))
+                	simg = cv2.resize(roi_gray,(10,10))
                 
                 #flattening
-                simg = simg.flatten().reshape(-1,1)
+                	simg = simg.flatten().reshape(-1,1)
                 
                 #transpose
-                simg = simg.T/10.0
+                	simg = simg.T/10.0
                                 
                 #predicting the value
-                res = clf.predict(simg)
+                	res = clf.predict(simg)
                 
                 #reduction for noise
-                if res//2 >15:
-                        print("Gender :{}\tPredicted Age is :{}".format((prediction_b),abs(res)//2))
+                	if res:
+                        	print("Gender :{}\tPredicted Age is :{}".format((prediction_b),abs(res+20)//2))
                         
                 #detection of eyes
-                eyes = eye_cascade.detectMultiScale(roi_gray)
+                	eyes = eye_cascade.detectMultiScale(roi_gray)
 
-                marker = find_marker(roi_color)
+                	marker = find_marker(roi_color)
                 
-                inches = distance_to_camera(KNOWN_WIDTH, focalLength, marker[1][0])
+                	inches = distance_to_camera(KNOWN_WIDTH, focalLength, marker[1][0])
                 
-                cv2.putText(img, "%.2fft" % (inches / 12),(x , y), cv2.FONT_HERSHEY_SIMPLEX,2.0, (0, 255, 255), 1)
+                	cv2.putText(img, "%.2fft" % (inches / 12),(x , y), cv2.FONT_HERSHEY_SIMPLEX,2.0, (0, 255, 255), 1)
 
                 
                 #looping through eye coordinates
-                for (ex,ey,ew,eh) in eyes:
+                	for (ex,ey,ew,eh) in eyes:
                         
                         #creating rectangles
-                        cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
+                        	cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
 
         #displaying the image
-        cv2.imshow('img',img)
+        	cv2.imshow('img',img)
         
         #wait key
-        k = cv2.waitKey(30) & 0xff
-        if k == 27:
-                break
+        	k = cv2.waitKey(30) & 0xff
+        	if k == 27:
+                	break
         
 #releasing the webcamfeed
 cap.release()
